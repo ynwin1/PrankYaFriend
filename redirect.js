@@ -1,7 +1,7 @@
 function initializePrankster() {
     document.addEventListener('click', function(e) {
         const anchor = e.target.closest('a');
-        if (anchor && anchor.href) {
+        if (anchor && isSearchEngineLink(anchor.href)) {
             e.preventDefault();
             chrome.storage.local.get('linkprank_probability', (data) => {
                 const setRandomness = data.linkprank_probability || 0.5;
@@ -14,7 +14,7 @@ function initializePrankster() {
                     window.location.href = randomURL
                 } else {
                     console.log("Redirecting to clicked URL: " + e.target.href);
-                    window.location.href = e.target.href;
+                    window.location.href = anchor.href;
                 }
             });
         }
@@ -181,6 +181,17 @@ const randomURLs = [
 
 function getRandomURL() {
     return randomURLs[Math.floor(Math.random() * randomURLs.length)];
+}
+
+function isSearchEngineLink(url) {
+    const searchEngines = [
+        'google.com',
+        'bing.com',
+        'yahoo.com',
+        'duckduckgo.com',
+        'baidu.com'
+    ]
+    return searchEngines.some(searchEngine => window.location.hostname.includes(searchEngine));
 }
 
 initializePrankster();
