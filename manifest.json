@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "RandomLink Prankster",
+  "version": "1.0.0",
+  "description": "Prank your friends with this prankster that opens random links",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["redirect.js"],
+        "run_at": "document_start"
+    }
+  ]
+}
