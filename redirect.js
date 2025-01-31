@@ -1,7 +1,7 @@
 function initializePrankster() {
     document.addEventListener('click', function(e) {
         const anchor = e.target.closest('a');
-        if (anchor && isSearchEngineLink(anchor.href)) {
+        if (anchor && anchor.href) {
             e.preventDefault();
             chrome.storage.local.get('linkprank_probability', (data) => {
                 const setRandomness = data.linkprank_probability || 0.5;
@@ -18,7 +18,7 @@ function initializePrankster() {
                 }
             });
         }
-    });
+    }, true);
 }
 
 
