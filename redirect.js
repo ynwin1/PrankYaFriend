@@ -2,7 +2,6 @@ function initializePrankster() {
     document.addEventListener('click', function(e) {
         const anchor = e.target.closest('a');
         if (anchor && anchor.href) {
-            console.log('Link clicked:', e.target.href);
             e.preventDefault();
             chrome.storage.local.get('linkprank_probability', (data) => {
                 const setRandomness = data.linkprank_probability || 0.5;
@@ -184,8 +183,4 @@ function getRandomURL() {
     return randomURLs[Math.floor(Math.random() * randomURLs.length)];
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializePrankster);
-} else {
-    initializePrankster();
-}
+initializePrankster();

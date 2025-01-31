@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "RandomLink Prankster",
   "version": "1.0.0",
-  "description": "Prank your friends with this prankster that opens random links",
+  "description": "Prank your friends with this prankster that opens verified random links",
   "permissions": [
     "activeTab",
     "storage",
