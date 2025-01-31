@@ -1,7 +1,7 @@
 function initializePrankster() {
     document.addEventListener('click', function(e) {
         const anchor = e.target.closest('a');
-        if (anchor && anchor.href) {
+        if (anchor && isSearchEngineLink(anchor)) {
             e.preventDefault();
             chrome.storage.local.get('linkprank_probability', (data) => {
                 const setRandomness = data.linkprank_probability || 0.5;
@@ -83,6 +83,7 @@ const randomURLs = [
     "https://en.wikipedia.org/wiki/Longest_word_in_English",
     "https://www.theendofreason.com",
     "https://burymewithmymoney.com/",
+    "https://www.404media.co/zuckerberg-says-everything-i-say-leaks-in-leaked-meeting-audio/",
     "http://www.ismycomputeron.com/",
     "http://www.staggeringbeauty.com/",
     "http://corndog.io/",
@@ -101,7 +102,6 @@ const randomURLs = [
     "https://en.wikipedia.org/wiki/My_postillion_has_been_struck_by_lightning",
     "https://alwaysjudgeabookbyitscover.com/",
     "https://www.youtube.com/watch?v=UTS8JgFj5Gg",
-    "http://www.laweekly.com/news/some-hollywood-extras-suffer-but-others-are-rolling-in-it-5392316",
     "https://www.youtube.com/watch?v=jyMvQEOtGPc",
     "http://aeon.co/magazine/nature-and-cosmos/plankton-the-tiny-sentinels-of-the-deep/",
     "https://www.youtube.com/watch?v=SzKBLPckUA8",
@@ -139,7 +139,6 @@ const randomURLs = [
     "https://en.wikipedia.org/wiki/Oh-My-God_particle",
     "https://www.youtube.com/watch?v=2Z4m4lnjxkY",
     "https://en.wikipedia.org/wiki/Death_from_laughter",
-    "https://www.nytimes.com/2019/12/14/world/americas/sicario-mexico-drug-cartels.html",
     "https://www.youtube.com/watch?v=-BeTq99LqUo",
     "https://www.youtube.com/watch?v=8UVNT4wvIGY",
     "https://en.wikipedia.org/wiki/Gay_bomb",
@@ -154,6 +153,7 @@ const randomURLs = [
     "https://www.youtube.com/watch?v=H-m4WdmmuOo",
     "https://en.wikipedia.org/wiki/Space_Poop_Challenge",
     "https://maninthedark.com/",
+    "https://www.youtube.com/watch?v=0_YeVjKU1jQ",
     "https://en.wikipedia.org/wiki/Death_by_coconut",
     "https://en.wikipedia.org/wiki/MaDonal",
     "https://www.cracked.com/article_19021_5-amazing-things-invented-by-donald-duck-seriously.html",
@@ -168,6 +168,7 @@ const randomURLs = [
     "https://www.trypap.com",
     "http://www.patience-is-a-virtue.org/",
     "https://en.wikipedia.org/wiki/Tiny_Kox",
+    "https://www.youtube.com/watch?v=vqbxFTN7-YY",
     "https://en.wikipedia.org/wiki/2_%2B_2_%3D_5",
     "https://corndogoncorndog.com/",
     "https://en.wikipedia.org/wiki/Kardashian_Index",
