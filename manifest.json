@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "RandomLink Prankster",
+  "name": "Prank Ya Friend",
   "version": "1.0.0",
-  "description": "Prank your friends with this prankster that opens verified random links",
+  "description": "Prank your friends with this prankster that opens funny links upon clicking webpages.",
   "permissions": [
     "activeTab",
     "storage",
