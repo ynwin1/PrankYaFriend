@@ -3,6 +3,9 @@
   "name": "Prank Ya Friend",
   "version": "1.0.0",
   "description": "Prank your friends with this prankster that opens funny links upon clicking webpages.",
+  "background": {
+    "service_worker": "background.js"
+  },
   "permissions": [
     "activeTab",
     "storage",
