@@ -6,6 +6,11 @@
   "background": {
     "service_worker": "background.js"
   },
+  "icons": {
+    "16": "images/pyf16.png",
+    "48": "images/pyf48.png",
+    "128": "images/pyf128.png"
+  },
   "permissions": [
     "activeTab",
     "storage",
